@@ -1,12 +1,28 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  mode: "jit",
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "farmcity-primary": "#313639",
+      },
+      backgroundImage: {
+        "hero-image": "url('/img/bg-image.jpg')",
+      },
+    },
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        lg: "1124px",
+        xl: "1124px",
+        "2xl": "1124px",
+      },
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
