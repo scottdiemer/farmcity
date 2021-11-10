@@ -5,7 +5,7 @@ import links from "../constants/links";
 export default function Footer() {
   return (
     <>
-      <footer className="flex justify-between p-4 bg-gray-400">
+      <footer className="flex justify-between p-4">
         <div className="flex items-center">
           <Image
             className="items-center"
@@ -28,7 +28,7 @@ export default function Footer() {
             })}
           </ul>
         </div>
-        <div flex flex-col>
+        <div className="flex flex-col">
           <h2>Orlando Location</h2>
           <h3>Address</h3>
           <p>1610 Atlanta Ave</p>
@@ -36,7 +36,7 @@ export default function Footer() {
           <h3>Phone</h3>
           <p>(407) 843-7470</p>
         </div>
-        <div flex flex-col>
+        <div className="flex flex-col">
           <h2>Apopka Location</h2>
           <h3>Address</h3>
           <p>440 S. Park Ave</p>
