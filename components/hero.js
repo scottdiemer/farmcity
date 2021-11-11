@@ -14,16 +14,16 @@ export default function Hero() {
         alt="Image of horses"
       />
       <div className="absolute inset-0 flex flex-col bg-gray-900 bg-opacity-60">
-        <h1 className="mx-auto mt-6 font-mono text-4xl text-white">
-          this is our h1 tag
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet.
-        </p>
+        <div className="container flex flex-col items-center">
+          <h1 className="mt-6 text-4xl text-white">this is our h1 tag</h1>
+          <p className="">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet.
+          </p>
+        </div>
       </div>
     </section>
   );
