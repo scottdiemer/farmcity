@@ -6,6 +6,12 @@ module.exports = {
     extend: {
       colors: {
         "farmcity-primary": "#313639",
+        "spicy-mix": "#8A584C",
+        "cadet-grey": "#8FA6AC",
+        champagne: "#F5EACF",
+        tan: "#CEB793",
+        shadow: "#85865F",
+        "olive-drab-camouflage": "#4F583D",
       },
       backgroundImage: {
         "hero-image": "url('/img/bg-image.jpg')",
