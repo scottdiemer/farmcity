@@ -1,6 +1,6 @@
-export default function about() {
+export default function about(...props) {
   return (
-    <section className="bg-tan p-7">
+    <section className="bg-tan/50 p-7">
       <div className="container">
         <div className="mx-auto">
           <h2 className="p-4 text-3xl text-center text-olive-drab-camouflage">
@@ -8,10 +8,13 @@ export default function about() {
           </h2>
         </div>
         <p className="mx-auto text-center w-100 text-grey-800">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quod
-          tempora minus earum, sequi veniam voluptatem culpa perspiciatis
-          consectetur autem, officiis incidunt voluptas consequatur voluptatum
-          quaerat, nemo maiores illo architecto!
+          Since Farm City Feed started in 1963, we’ve seen a lot of things
+          change. The cattle market on Orange Ave is no longer around, feed now
+          comes in by truck not by rail car, and the hitching post in the
+          parking lot to tie your horse off has since been removed. While some
+          things have changed, one thing has not is the way we do business! We
+          believe when you provide good service and prices that are reasonable,
+          people will come back.
         </p>
       </div>
     </section>

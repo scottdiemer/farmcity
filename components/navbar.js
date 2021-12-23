@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FaBars } from "react-icons/fa";
+import Logo from "./logo";
 import links from "../constants/links";
 
 export default function Navbar() {
@@ -10,18 +10,14 @@ export default function Navbar() {
   return (
     <nav className="uppercase bg-olive-drab-camouflage">
       <div className="container flex items-center py-4">
-        <div className="px-4 py-2 shadow bg-champagne rounded-xl">
-          <Image
-            src="/FarmCity_TextOnly.svg"
-            alt="Farm City"
-            width={200}
-            height={55}
-          />
-        </div>
-        <ul className="flex items-center justify-end flex-1 hidden text-sm tracking-wider text-tan gap-12 sm:flex">
+        <Logo />
+        <ul className="flex items-center justify-end flex-1 hidden tracking-wider mt-14 text-md text-tan gap-12 sm:flex ">
           {links.map((item, index) => {
             return (
-              <li key={index}>
+              <li
+                key={index}
+                className="transition-all duration-150 hover:text-white"
+              >
                 <Link className="cursorpointer" href={item.path}>
                   {item.text}
                 </Link>

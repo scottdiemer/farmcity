@@ -2,7 +2,11 @@ import Head from "next/head";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
-export default function Layout({ title = "default title", favIcon, children }) {
+export default function Layout({
+  title = "Farm City Feed Stores",
+  favIcon,
+  children,
+}) {
   return (
     <>
       <Head>
