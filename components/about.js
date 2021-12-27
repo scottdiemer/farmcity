@@ -1,12 +1,10 @@
+import Title from "../components/Title";
+
 export default function about(...props) {
   return (
     <section className="bg-tan/50 p-7">
       <div className="container">
-        <div className="mx-auto">
-          <h2 className="p-4 text-3xl text-center text-olive-drab-camouflage">
-            About Us
-          </h2>
-        </div>
+        <Title title="About Us" />
         <p className="mx-auto text-center w-100 text-grey-800">
           Since Farm City Feed started in 1963, we’ve seen a lot of things
           change. The cattle market on Orange Ave is no longer around, feed now
