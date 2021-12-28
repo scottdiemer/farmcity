@@ -1,6 +1,6 @@
-import Layout from "../components/layout";
-import Hero from "../components/hero";
-import About from "../components/about";
+import Layout from "../components/Layout";
+import Hero from "../components/Hero";
+import About from "../components/About";
 import Featured from "../components/Featured";
 
 export default function Home() {

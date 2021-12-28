@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Layout({
   title = "Farm City Feed Stores",

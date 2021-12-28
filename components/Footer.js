@@ -2,8 +2,8 @@ import Link from "next/link";
 import links from "../constants/links";
 import storeInfo from "../constants/store-info";
 import { MdLocationOn, MdPhone, MdAccessTime } from "react-icons/md";
-import Logo from "./logo";
-import Copyright from "./copyright";
+import Logo from "./Logo";
+import Copyright from "./Copyright";
 
 export default function Footer() {
   const infoHeader = "ml-2 font-semibold";
@@ -16,7 +16,10 @@ export default function Footer() {
             <ul className="p-4 uppercase">
               {links.map((item, index) => {
                 return (
-                  <li className="py-1 text-sm" key={index}>
+                  <li
+                    className="py-1 text-sm text-center md:text-left"
+                    key={index}
+                  >
                     <Link className="cursorpointer" href={item.path}>
                       {item.text}
                     </Link>

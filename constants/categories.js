@@ -1,6 +1,11 @@
 export default [
   {
-    name: "Feed",
+    title: "Feed",
+    description: "We carry a variety of different types of feed",
+    imageUrl: "img/categories/HorseBags_Homepage.jpg",
+  },
+  {
+    title: "Hay",
     description: "We carry a variety of different types of hay",
     imageUrl: "img/categories/HorseBags_Homepage.jpg",
   },
