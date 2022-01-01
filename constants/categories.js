@@ -1,12 +1,32 @@
 export default [
   {
-    title: "Feed",
+    title: "Horse",
     description: "We carry a variety of different types of feed",
-    imageUrl: "/img/categories/HorseBags_Homepage.jpg",
+    imageUrl: "/img/categories/horse.jpg",
   },
   {
-    title: "Hay",
+    title: "Pet",
     description: "We carry a variety of different types of hay",
-    imageUrl: "/img/categories/timothy-grass-hay-bale.webp",
+    imageUrl: "/img/categories/pet.jpg",
+  },
+  {
+    title: "Poultry",
+    description: "We carry a variety of different types of feed",
+    imageUrl: "/img/categories/poultry.jpg",
+  },
+  {
+    title: "Livestock",
+    description: "We carry a variety of different types of tack",
+    imageUrl: "/img/categories/goat.jpg",
+  },
+  {
+    title: "Birds",
+    description: "We carry a variety of different types of feed",
+    imageUrl: "/img/categories/bird.jpg",
+  },
+  {
+    title: "Wildlife",
+    description: "We carry a variety of different types of hay",
+    imageUrl: "/img/categories/deer.jpg",
   },
 ];
