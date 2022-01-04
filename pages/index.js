@@ -5,7 +5,7 @@ import Featured from "../components/Featured";
 
 export default function Home() {
   return (
-    <Layout title="Farm City Feed Stores" favIcon="/favIcon.ico">
+    <Layout title="Farm City Feed Stores">
       <Hero />
       <About />
       <Featured />

@@ -8,6 +8,7 @@ export default [
     phone: "(407) 843-7470",
     weekdayHours: "8:30am - 5:30pm",
     saturdayHours: "8:30am - 3:00pm",
+    imageUrl: "/img/locations/orlando.jpg",
   },
   {
     location: "Apopka",
@@ -18,5 +19,6 @@ export default [
     phone: "(407) 889-2822",
     weekdayHours: "9:00am - 6:00pm",
     saturdayHours: "9:00am - 3:30pm",
+    imageUrl: "/img/locations/apopka.jpg",
   },
 ];
