@@ -1,4 +1,3 @@
-import { floor, random } from "mathjs";
 import { motion } from "framer-motion";
 
 /******************************************************
@@ -8,20 +7,18 @@ import { motion } from "framer-motion";
  *******************************************************/
 function SlideInWhenVisible({ number, children }) {
   const direction = number % 2 === 0 ? -150 : 150;
-  const randomDelay = floor(random() * 6) * 0.3;
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      transition={{ duration: 0.3 }}
+      transition={{ delay: 0.4 }}
       variants={{
         visible: { opacity: 1, translateX: 0, translateY: 0 },
         hidden: {
           opacity: 0,
           translateX: direction,
           translateY: 150,
-          delay: randomDelay,
         },
       }}
     >

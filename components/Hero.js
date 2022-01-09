@@ -1,5 +1,6 @@
 import Image from "next/image";
 import heroImage from "../public/img/bg-image.jpg";
+import { blurredHeroImage } from "../data/baseImages";
 
 export default function Hero() {
   return (
@@ -12,6 +13,8 @@ export default function Hero() {
         layout="fill"
         objectFit="cover"
         alt="Hands with oats in shape of heart"
+        placeholder="blur"
+        blurDataURL={blurredHeroImage}
       />
       <div className="absolute inset-0 flex flex-col bg-gray-900/50">
         <div className="container flex flex-col items-center">

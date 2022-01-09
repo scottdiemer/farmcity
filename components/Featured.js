@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import Categories from "../constants/categories";
+import Categories from "../data/categories";
 import Title from "../components/Title";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
 

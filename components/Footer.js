@@ -1,6 +1,6 @@
 import Link from "next/link";
-import links from "../constants/links";
-import storeInfo from "../constants/store-info";
+import links from "../data/links";
+import storeInfo from "../data/store-info";
 import { MdLocationOn, MdPhone, MdAccessTime } from "react-icons/md";
 import Logo from "./Logo";
 import Copyright from "./Copyright";
@@ -55,7 +55,7 @@ export default function Footer() {
             );
           })}
         </div>
-        <Copyright name="Farm City Feed Stores" className="text-tan" />
+        <Copyright name="Farm City Feed Stores" className="text-white" />
       </footer>
     </>
   );

@@ -1,17 +1,18 @@
 export default [
   {
     title: "Horse",
-    description: "We carry a variety of different types of feed",
+    description:
+      "Farm City has a large selection of horse feed, hay, suppliments, and tack.",
     imageUrl: "/img/categories/horse.jpg",
   },
   {
     title: "Pet",
-    description: "We carry a variety of different types of hay",
+    description: "Pet stuff",
     imageUrl: "/img/categories/pet.jpg",
   },
   {
     title: "Poultry",
-    description: "We carry a variety of different types of feed",
+    description: "Chickn stuff",
     imageUrl: "/img/categories/poultry.jpg",
   },
   {

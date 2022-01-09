@@ -1,7 +1,10 @@
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -9,7 +12,7 @@ module.exports = {
         "spicy-mix": "#8A584C",
         "cadet-grey": "#8FA6AC",
         champagne: "#F5EACF",
-        tan: "#CEB793",
+        tan: "#e6dac8", //  "#CEB793", changed color for a11y to add contrast
         shadow: "#85865F",
         "olive-drab-camouflage": "#4F583D",
       },

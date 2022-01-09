@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import Logo from "./Logo";
-import links from "../constants/links";
+import links from "../data/links";
 
 export default function Navbar() {
   const [toggled, setToggled] = useState(false);
