@@ -8,7 +8,7 @@ export default function Products() {
     error,
   } = useQuery("products", getProducts);
 
-  console.log("document: ", products.document?.text);
+  console.log(products[0].description.document[0].children[0].text);
 
   !products && <p>No data!</p>;
   error && <p>Oops something went wrong!</p>;
@@ -18,10 +18,11 @@ export default function Products() {
       <section>
         <h2 className="text-lg">Products</h2>
         {products.map((product) => {
+          const description = product.description.document[0].children[0].text;
           return (
             <div key={product.id}>
               <p>{product.name}</p>
-              {/* <p>{product.document?.text}</p> */}
+              <p>{description}</p>
             </div>
           );
         })}
