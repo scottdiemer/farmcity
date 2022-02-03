@@ -1,31 +1,37 @@
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { getProducts } from "../lib/products";
+import Title from "../components/Title";
+import SlideInWhenVisible from "../components/SlideInWhenVisible";
 import Layout from "../components/Layout";
+import Card from "../components/Card";
 
-export default function Products() {
+export default function Products({ serverUrl }) {
   const {
     data: { products },
     error,
   } = useQuery("products", getProducts);
-
-  console.log(products[0].description.document[0].children[0].text);
 
   !products && <p>No data!</p>;
   error && <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
-      <section>
-        <h2 className="text-lg">Products</h2>
-        {products.map((product) => {
-          const description = product.description.document[0].children[0].text;
-          return (
-            <div key={product.id}>
-              <p>{product.name}</p>
-              <p>{description}</p>
-            </div>
-          );
-        })}
+      <section className="bg-tan/25">
+        <Title className="text-shadow" title="Products" />
+        <div className="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => {
+            return (
+              <SlideInWhenVisible number={index} key={index}>
+                <Card
+                  key={product.id}
+                  title={product.name}
+                  description={product.description.document[0].children[0].text}
+                  imageUrl={serverUrl + product.productImage.url}
+                />
+              </SlideInWhenVisible>
+            );
+          })}
+        </div>
       </section>
     </Layout>
   );
@@ -38,6 +44,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      serverUrl: process.env.SERVER_URL,
       dehydratedState: dehydrate(queryClient),
     },
   };
