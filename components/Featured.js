@@ -5,7 +5,7 @@ import SlideInWhenVisible from "../components/SlideInWhenVisible";
 
 function Featured() {
   return (
-    <section className="bg-shadow">
+    <section className="bg-shadow overflow-hidden">
       <Title className="text-champagne" title="What we offer" />
       <div className="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {Categories.map((category, index) => {

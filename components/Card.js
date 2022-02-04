@@ -1,6 +1,13 @@
 import Image from "next/image";
 
-function Card({ title, description, imageUrl, className }) {
+function Card({
+  title,
+  description,
+  imageUrl,
+  width = "100%",
+  height = "50%",
+  className,
+}) {
   return (
     <article
       className={`my-4 overflow-hidden bg-white shadow hover:shadow-xl rounded-xl ${className}`}
@@ -8,8 +15,8 @@ function Card({ title, description, imageUrl, className }) {
       <Image
         src={imageUrl}
         alt={title}
-        width="100%"
-        height="50%"
+        width={width}
+        height={height}
         layout="responsive"
         objectFit="cover"
       />

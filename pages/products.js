@@ -16,7 +16,7 @@ export default function Products({ serverUrl }) {
 
   return (
     <Layout>
-      <section className="bg-tan/25">
+      <section className="bg-tan/25 overflow-hidden">
         <Title className="text-shadow" title="Products" />
         <div className="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => {
@@ -47,5 +47,6 @@ export async function getStaticProps() {
       serverUrl: process.env.SERVER_URL,
       dehydratedState: dehydrate(queryClient),
     },
+    revalidate: parseInt(process.env.REVALIDATE_SECONDS),
   };
 }
