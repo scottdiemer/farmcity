@@ -1,12 +1,18 @@
 import Link from "next/link";
 import links from "../data/links";
-import storeInfo from "../data/store-info";
-import { MdLocationOn, MdPhone, MdAccessTime } from "react-icons/md";
+import StoreInfo from "../data/StoreInfo";
+import {
+  LocationIconHeader,
+  PhoneIconHeader,
+  TimeIconHeader,
+} from "../components/IconHeader";
+import Address from "../components/Address";
+import Days from "../components/DaysEnum";
+import BusinessHours from "../components/BusinessHours";
 import Logo from "./Logo";
 import Copyright from "./Copyright";
 
 export default function Footer() {
-  const infoHeader = "ml-2 font-semibold";
   return (
     <>
       <footer className="bg-spicy-mix">
@@ -28,29 +34,36 @@ export default function Footer() {
               })}
             </ul>
           </div>
-          {storeInfo.map((item, index) => {
+          {StoreInfo.map((item, index) => {
             return (
               <div
                 key={index}
                 className="flex flex-col items-center p-2 mt-2 text-sm md:items-start"
               >
-                <div className="flex text-gray-200">
-                  <MdLocationOn />
-                  <h2 className={infoHeader}>{item.location} Location:</h2>
+                <div className="py-2">
+                  <LocationIconHeader title={`${item.location} Location:`} />
+                  <Address
+                    street={item.street}
+                    city={item.city}
+                    state={item.state}
+                    zip={item.zip}
+                  />
                 </div>
-                <p>{item.address}</p>
-                <p>{item.city + " " + item.state + " " + item.zip}</p>
-                <div className="flex mt-2 text-gray-200">
-                  <MdAccessTime />
-                  <h2 className={infoHeader}>Store Hours:</h2>
+                <div className="py-2">
+                  <TimeIconHeader title="Store Hours:" />
+                  <BusinessHours
+                    day={Days.Weekdays}
+                    hours={item.weekdayHours}
+                  />
+                  <BusinessHours
+                    day={Days.Saturday}
+                    hours={item.saturdayHours}
+                  />
                 </div>
-                <p>Monday - Friday: {item.weekdayHours}</p>
-                <p>Saturday: {item.saturdayHours}</p>
-                <div className="flex mt-2 text-gray-200">
-                  <MdPhone />
-                  <h2 className={infoHeader}>Phone:</h2>
+                <div className="py-2">
+                  <PhoneIconHeader title="Phone:" />
+                  <p>{item.phone}</p>
                 </div>
-                <p>{item.phone}</p>
               </div>
             );
           })}

@@ -1,4 +1,4 @@
-export default [
+const NavLinks = [
   {
     path: "/",
     text: "home",
@@ -8,8 +8,8 @@ export default [
     text: "about",
   },
   {
-  	path: "/products",
-  	text: "products",
+    path: "/products",
+    text: "products",
   },
   {
     path: "/specials",
@@ -19,4 +19,6 @@ export default [
     path: "/contact",
     text: "contact",
   },
-]
+];
+
+export default NavLinks;

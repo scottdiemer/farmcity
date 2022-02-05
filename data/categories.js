@@ -1,4 +1,4 @@
-export default [
+const Categories = [
   {
     title: "Horse",
     description:
@@ -31,3 +31,5 @@ export default [
     imageUrl: "/img/categories/deer.jpg",
   },
 ];
+
+export default Categories;

@@ -1,19 +1,24 @@
 import Image from "next/image";
 import Layout from "../components/Layout";
+import Address from "../components/Address";
 import Banner from "../components/Banner";
+import Days from "../components/DaysEnum";
+import BusinessHours from "../components/BusinessHours";
+import GroupHeader from "../components/GroupHeader";
 import contactImage from "../public/img/bg-contact.jpg";
-import storeInfo from "../constants/store-info";
+import StoreInfo from "../data/StoreInfo";
 
 function Contact() {
-  const infoHeader = "font-semibold";
-  const groupHeader = "mt-3 text-shadow";
   return (
     <Layout title="Contact Us | Farm City Feed Stores">
-      <Banner image={contactImage} alt="" title="Contact Us" />
+      <Banner image={contactImage} alt="Contact Banner" title="Contact Us" />
       <section className="bg-champagne/25">
-        {storeInfo.map((item, index) => {
+        {StoreInfo.map((item, index) => {
           return (
-            <div className="container flex flex-col p-2 md:p-6 md:flex-row">
+            <div
+              key={index}
+              className="container flex flex-col p-2 md:p-6 md:flex-row"
+            >
               <div className="mx-auto md:mx-0">
                 <Image
                   src={item.imageUrl}
@@ -22,23 +27,18 @@ function Contact() {
                   height={360}
                 />
               </div>
-              <div
-                key={index}
-                className="flex flex-col items-center p-2 mx-4 text-lg md:items-start"
-              >
-                <div className="text-shadow">
-                  <h2 className={infoHeader}>{item.location} Location:</h2>
-                </div>
-                <p>{item.address}</p>
-                <p>{item.city + " " + item.state + " " + item.zip}</p>
-                <div className={groupHeader}>
-                  <h2 className={infoHeader}>Store Hours:</h2>
-                </div>
-                <p>Monday - Friday: {item.weekdayHours}</p>
-                <p>Saturday: {item.saturdayHours}</p>
-                <div className={groupHeader}>
-                  <h2 className={infoHeader}>Phone:</h2>
-                </div>
+              <div className="flex flex-col items-center p-2 mx-4 text-lg md:items-start">
+                <GroupHeader title={`${item.location} Location:`} />
+                <Address
+                  street={item.street}
+                  city={item.city}
+                  state={item.state}
+                  zip={item.zip}
+                />
+                <GroupHeader title="Store Hours:" />
+                <BusinessHours day={Days.Weekdays} hours={item.weekdayHours} />
+                <BusinessHours day={Days.Saturday} hours={item.saturdayHours} />
+                <GroupHeader title="Phone:" />
                 <p>{item.phone}</p>
               </div>
             </div>

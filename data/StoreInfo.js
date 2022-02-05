@@ -1,7 +1,7 @@
-export default [
+const StoreInfo = [
   {
     location: "Orlando",
-    address: "1610 Atlanta Ave.",
+    street: "1610 Atlanta Ave.",
     city: "Orlando",
     state: "FL",
     zip: "32806",
@@ -12,7 +12,7 @@ export default [
   },
   {
     location: "Apopka",
-    address: "440 S. Park Ave.",
+    street: "440 S. Park Ave.",
     city: "Apopka",
     state: "FL",
     zip: "32704",
@@ -22,3 +22,5 @@ export default [
     imageUrl: "/img/locations/apopka.jpg",
   },
 ];
+
+export default StoreInfo;
