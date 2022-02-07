@@ -6,12 +6,9 @@ import Layout from "../components/Layout";
 import Card from "../components/Card";
 
 export default function Products({ serverUrl }) {
-  const {
-    data: { products },
-    error,
-  } = useQuery("products", getProducts);
+  const { data, error } = useQuery("products", getProducts);
 
-  !products && <p>No data!</p>;
+  !data && <p>No data!</p>;
   error && <p>Oops something went wrong!</p>;
 
   return (
@@ -19,7 +16,7 @@ export default function Products({ serverUrl }) {
       <section className="bg-tan/25 overflow-hidden">
         <Title className="text-shadow" title="Products" />
         <div className="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => {
+          {data.data.products.map((product, index) => {
             return (
               <SlideInWhenVisible number={index} key={index}>
                 <Card
