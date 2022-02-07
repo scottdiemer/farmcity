@@ -1,5 +1,5 @@
 import { dehydrate, QueryClient, useQuery } from "react-query";
-import { getProducts } from "../lib/products2";
+import { getProducts } from "../lib/products";
 import Title from "../components/Title";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
 import Layout from "../components/Layout";
@@ -7,6 +7,7 @@ import Card from "../components/Card";
 
 export default function Products({ serverUrl }) {
   const { data, error } = useQuery("products", getProducts);
+
   !data && <p>No data!</p>;
   error && <p>Oops something went wrong!</p>;
 
