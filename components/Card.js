@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CardContent from "./CardContent";
 
 function Card({
   title,
@@ -6,6 +7,8 @@ function Card({
   imageUrl,
   width = "100%",
   height = "50%",
+  layout = "responsive",
+  objectFit = "cover",
   className,
 }) {
   return (
@@ -17,16 +20,29 @@ function Card({
         alt={title}
         width={width}
         height={height}
-        layout="responsive"
-        objectFit="cover"
+        layout={layout}
+        objectFit={objectFit}
       />
-      <div className="p-4">
-        <h2 className="text-2xl text-center text-olive-drab-camouflage">
-          {title}
-        </h2>
-        <p className="py-2 text-sm text-center">{description}</p>
-      </div>
+      <CardContent title={title} description={description} />
     </article>
+  );
+}
+
+export function SaleCard({
+  title,
+  description,
+  imageUrl,
+  price,
+  salePrice,
+  className,
+}) {
+  return (
+    <Card
+      title={title}
+      description={description}
+      imageUrl={imageUrl}
+      className={className}
+    />
   );
 }
 
