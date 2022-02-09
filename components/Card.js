@@ -1,7 +1,7 @@
 import Image from "next/image";
 import CardContent from "./CardContent";
 
-function Card({
+export function ImageCard({
   title,
   description,
   imageUrl,
@@ -9,12 +9,10 @@ function Card({
   height = "50%",
   layout = "responsive",
   objectFit = "cover",
-  className,
+  classNames,
 }) {
   return (
-    <article
-      className={`my-4 overflow-hidden bg-white shadow hover:shadow-xl rounded-xl ${className}`}
-    >
+    <Card className={classNames}>
       <Image
         src={imageUrl}
         alt={title}
@@ -24,6 +22,16 @@ function Card({
         objectFit={objectFit}
       />
       <CardContent title={title} description={description} />
+    </Card>
+  );
+}
+
+export function Card({ children, classNames }) {
+  return (
+    <article
+      className={`my-4 overflow-hidden bg-white shadow hover:shadow-xl rounded-xl ${classNames}`}
+    >
+      {children}
     </article>
   );
 }
@@ -34,16 +42,29 @@ export function SaleCard({
   imageUrl,
   price,
   salePrice,
-  className,
+  classNames,
 }) {
   return (
-    <Card
-      title={title}
-      description={description}
-      imageUrl={imageUrl}
-      className={className}
-    />
+    <Card className={classNames}>
+      <Image
+        src={imageUrl}
+        alt={title}
+        width={width}
+        height={height}
+        layout={layout}
+        objectFit={objectFit}
+      />
+      <CardContent title={title} description={description} />
+      <Price price={price} salePrice={salePrice} />
+    </Card>
   );
 }
 
-export default Card;
+export function Price({ price, salePrice, priceClass, saleClass }) {
+  return (
+    <div>
+      <p classNames={priceClass}>Price: {price}</p>
+      {salePrice && <p classNames={saleClass}>Sale: {salePrice}</p>}
+    </div>
+  );
+}

@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import { ImageCard } from "../components/Card";
 import Categories from "../data/categories";
 import Title from "../components/Title";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
@@ -11,7 +11,7 @@ function Featured() {
         {Categories.map((category, index) => {
           return (
             <SlideInWhenVisible number={index} key={index}>
-              <Card
+              <ImageCard
                 title={category.title}
                 description={category.description}
                 imageUrl={category.imageUrl}

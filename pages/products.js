@@ -3,7 +3,7 @@ import { getProducts } from "../lib/products";
 import Title from "../components/Title";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
 import Layout from "../components/Layout";
-import Card from "../components/Card";
+import { ImageCard } from "../components/Card";
 
 export default function Products({ serverUrl }) {
   const { data, error } = useQuery("products", getProducts);
@@ -19,7 +19,7 @@ export default function Products({ serverUrl }) {
           {data.data.products.map((product, index) => {
             return (
               <SlideInWhenVisible number={index} key={index}>
-                <Card
+                <ImageCard
                   key={product.id}
                   title={product.name}
                   description={product.description.document[0].children[0].text}
