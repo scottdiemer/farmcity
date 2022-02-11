@@ -1,34 +1,68 @@
+import Image from "next/image";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { getProducts } from "../lib/products";
+import { Card, Description, Price } from "../components/Card";
+import { GridContainer } from "../components/GridContainer";
+import Layout from "../components/Layout";
 import Title from "../components/Title";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
-import Layout from "../components/Layout";
-import { ImageCard } from "../components/Card";
 
 export default function Products({ serverUrl }) {
-  const { data, error } = useQuery("products", getProducts);
+  const {
+    data: {
+      data: { products },
+    },
+    error,
+  } = useQuery("products", getProducts);
 
-  !data && <p>No data!</p>;
+  !products && <p>No products!</p>;
   error && <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
       <section className="bg-tan/25 overflow-hidden">
-        <Title className="text-shadow" title="Products" />
-        <div className="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.data.products.map((product, index) => {
+        <Title
+          className="mx-auto p-4 text-3xl text-center text-shadow"
+          title="Products"
+        />
+        <GridContainer>
+          {products.map((product, index) => {
+            const { id, name, description: desc, productImage } = product;
+            const { url, height, width } = productImage;
+            const description = desc.document[0].children[0].text;
             return (
-              <SlideInWhenVisible number={index} key={index}>
-                <ImageCard
-                  key={product.id}
-                  title={product.name}
-                  description={product.description.document[0].children[0].text}
-                  imageUrl={serverUrl + product.productImage.url}
-                />
+              <SlideInWhenVisible number={index} key={id}>
+                <Card>
+                  <Image
+                    src={serverUrl.concat(url)}
+                    width={width}
+                    height={height}
+                    layout="responsive"
+                    objectFit="contain"
+                  />
+                  <div className="p-4">
+                    <Title
+                      className="text-2xl text-center text-olive-drab-camouflage"
+                      title={name}
+                    />
+                    <Description
+                      className="py-2 text-sm text-center"
+                      description={description}
+                    />
+                    <Price className="py-2 text-med flex justify-around">
+                      <span className="line-through text-gray-400 text-left">
+                        Was: $7.95
+                      </span>
+                      <span className="font-semibold text-red-600 text-right">
+                        Sale: $5.95
+                      </span>
+                    </Price>
+                  </div>
+                </Card>
               </SlideInWhenVisible>
             );
           })}
-        </div>
+        </GridContainer>
       </section>
     </Layout>
   );

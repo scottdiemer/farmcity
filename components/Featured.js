@@ -1,25 +1,45 @@
-import { ImageCard } from "../components/Card";
-import Categories from "../data/categories";
-import Title from "../components/Title";
+import Image from "next/image";
+import { Card, Description } from "../components/Card";
+import { GridContainer } from "../components/GridContainer";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
+import Title from "../components/Title";
+import Categories from "../data/categories";
 
 function Featured() {
   return (
     <section className="bg-shadow overflow-hidden">
-      <Title className="text-champagne" title="What we offer" />
-      <div className="container p-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Title
+        className="mx-auto p-4 text-3xl text-center text-champagne"
+        title="What we offer"
+      />
+      <GridContainer>
         {Categories.map((category, index) => {
+          const { title, description, imageUrl } = category;
           return (
-            <SlideInWhenVisible number={index} key={index}>
-              <ImageCard
-                title={category.title}
-                description={category.description}
-                imageUrl={category.imageUrl}
-              />
+            <SlideInWhenVisible number={index} key={index.toString()}>
+              <Card>
+                <Image
+                  src={imageUrl}
+                  width="100%"
+                  height="50%"
+                  layout="responsive"
+                  objectFit="cover"
+                />
+                <div className="p-4">
+                  <Title
+                    className="text-2xl text-center text-olive-drab-camouflage"
+                    title={title}
+                  />
+                  <Description
+                    className="py-2 text-sm text-center"
+                    description={description}
+                  />
+                </div>
+              </Card>
             </SlideInWhenVisible>
           );
         })}
-      </div>
+      </GridContainer>
     </section>
   );
 }

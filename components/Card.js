@@ -36,35 +36,10 @@ export function Card({ children, classNames }) {
   );
 }
 
-export function SaleCard({
-  title,
-  description,
-  imageUrl,
-  price,
-  salePrice,
-  classNames,
-}) {
-  return (
-    <Card className={classNames}>
-      <Image
-        src={imageUrl}
-        alt={title}
-        width={width}
-        height={height}
-        layout={layout}
-        objectFit={objectFit}
-      />
-      <CardContent title={title} description={description} />
-      <Price price={price} salePrice={salePrice} />
-    </Card>
-  );
-}
+export const Description = ({ description, className }) => (
+  <p className={className}>{description}</p>
+);
 
-export function Price({ price, salePrice, priceClass, saleClass }) {
-  return (
-    <div>
-      <p classNames={priceClass}>Price: {price}</p>
-      {salePrice && <p classNames={saleClass}>Sale: {salePrice}</p>}
-    </div>
-  );
-}
+export const Price = ({ children, className }) => (
+  <p className={className}>{children}</p>
+);
