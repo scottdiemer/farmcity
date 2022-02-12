@@ -33,20 +33,22 @@ export default function Products({ serverUrl }) {
             return (
               <SlideInWhenVisible number={index} key={id}>
                 <Card>
-                  <Image
-                    src={serverUrl.concat(url)}
-                    width={width}
-                    height={height}
-                    layout="responsive"
-                    objectFit="contain"
-                  />
+                  <div className="w-48 m-8 mx-auto">
+                    <Image
+                      src={serverUrl.concat(url)}
+                      width={250}
+                      height={250}
+                      layout="intrinsic"
+                      objectFit="contain"
+                    />
+                  </div>
                   <div className="p-4">
                     <Title
                       className="text-2xl text-center text-olive-drab-camouflage"
                       title={name}
                     />
                     <Description
-                      className="py-2 text-sm text-center"
+                      className="py-2 mb-2 text-sm text-center prose"
                       description={description}
                     />
                     <Price className="py-2 text-med flex justify-around">
