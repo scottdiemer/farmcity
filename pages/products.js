@@ -28,8 +28,9 @@ export default function Products({ serverUrl }) {
         <GridContainer>
           {products.map((product, index) => {
             const { id, name, description: desc, productImage } = product;
-            const { url, height, width } = productImage;
+            const { url } = productImage;
             const description = desc.document[0].children[0].text;
+
             return (
               <SlideInWhenVisible number={index} key={id}>
                 <Card>
