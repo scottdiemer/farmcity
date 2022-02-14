@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DocumentRenderer } from "@keystone-6/document-renderer";
 import CardContent from "./CardContent";
 
 export function ImageCard({
@@ -36,10 +37,14 @@ export function Card({ children, classNames }) {
   );
 }
 
-export const Description = ({ description, className }) => (
-  <p className={className}>{description}</p>
-);
+export function Description({ description, className }) {
+  return (
+    <div className={className}>
+      <DocumentRenderer document={description} />
+    </div>
+  );
+}
 
-export const Price = ({ children, className }) => (
-  <p className={className}>{children}</p>
-);
+export function Price({ children, className }) {
+  return <p className={className}>{children}</p>;
+}

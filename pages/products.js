@@ -29,7 +29,7 @@ export default function Products({ serverUrl }) {
           {products.map((product, index) => {
             const { id, name, description: desc, productImage } = product;
             const { url } = productImage;
-            const description = desc.document[0].children[0].text;
+            const description = desc.document;
 
             return (
               <SlideInWhenVisible number={index} key={id}>
@@ -49,7 +49,7 @@ export default function Products({ serverUrl }) {
                       title={name}
                     />
                     <Description
-                      className="py-2 mb-2 text-sm text-center prose"
+                      className="m-4 prose line-clamp-4"
                       description={description}
                     />
                     <Price className="py-2 text-med flex justify-around">

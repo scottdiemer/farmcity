@@ -133,6 +133,11 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
+"@keystone-6/document-renderer@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@keystone-6/document-renderer/-/document-renderer-1.0.0.tgz#afedf84bdfcce8130d6f33daa9e477b08d5bc40c"
+  integrity sha512-mumjqZ+6+m9GhPauJTuRPRZGiZSbYOVJlqBvRmiEcndCuXiTucpyOWmANkIqDQFtPMOy0b13Elpx20mh8eUC6g==
+
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
   resolved "https://registry.npmjs.org/@napi-rs/triples/-/triples-1.0.3.tgz"
