@@ -27,9 +27,8 @@ export default function Products({ serverUrl }) {
         />
         <GridContainer>
           {products.map((product, index) => {
-            const { id, name, description: desc, productImage } = product;
+            const { id, name, description, productImage } = product;
             const { url } = productImage;
-            const description = desc.document;
 
             return (
               <SlideInWhenVisible number={index} key={id}>
@@ -50,7 +49,7 @@ export default function Products({ serverUrl }) {
                     />
                     <Description
                       className="m-4 prose line-clamp-4"
-                      description={description}
+                      description={description.document}
                     />
                     <Price className="py-2 text-med flex justify-around">
                       <span className="line-through text-gray-400 text-left">
