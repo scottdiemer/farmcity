@@ -27,9 +27,15 @@ export default function Products({ serverUrl }) {
         />
         <GridContainer>
           {products.map((product, index) => {
-            const { id, name, description, productImage } = product;
+            const {
+              id,
+              name,
+              description,
+              productImage,
+              prices,
+              salePrices,
+            } = product;
             const { url } = productImage;
-
             return (
               <SlideInWhenVisible number={index} key={id}>
                 <Card>
@@ -51,14 +57,23 @@ export default function Products({ serverUrl }) {
                       className="m-4 prose line-clamp-4"
                       description={description.document}
                     />
-                    <Price className="py-2 text-med flex justify-around">
-                      <span className="line-through text-gray-400 text-left">
-                        Was: $7.95
-                      </span>
-                      <span className="font-semibold text-red-600 text-right">
-                        Sale: $5.95
-                      </span>
-                    </Price>
+                    {prices.map((price, index) => {
+                      const salePrice = salePrices[index].price;
+                      return (
+                        <div
+                          key={index.toString()}
+                          className="flex justify-end text-med font-semibold p-2"
+                        >
+                          <div>{price.variant.value}</div>
+                          <Price className="text-red-500 ml-2">
+                            {`Sale: $${salePrice}`}
+                          </Price>
+                          <Price className="line-through ml-2 font-normal text-gray-300">
+                            {`Was: $${price.price}`}
+                          </Price>
+                        </div>
+                      );
+                    })}
                   </div>
                 </Card>
               </SlideInWhenVisible>
