@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { onSaleCheck } from "../lib/products";
 import { Card } from "../components/Card";
-import { Price } from "../components/Price";
 import { Description } from "../components/Description";
 import { GridContainer } from "../components/GridContainer";
-import Title from "../components/Title";
+import { Price } from "../components/Price";
+import { onSaleCheck } from "../lib/products";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
+import Title from "../components/Title";
 
 export function ProductList({ products }) {
   return (
