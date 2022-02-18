@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Card, Description } from "../components/Card";
+import { Card } from "../components/Card";
+import { Description } from "../components/Description";
 import { GridContainer } from "../components/GridContainer";
 import SlideInWhenVisible from "../components/SlideInWhenVisible";
 import Title from "../components/Title";
