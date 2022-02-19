@@ -2,9 +2,9 @@ import { MdLocationOn, MdPhone, MdAccessTime } from "react-icons/md";
 
 export function IconHeader({ title, icon }) {
   return (
-    <div className="flex text-gray-200">
+    <div className="flex text-gray-200 justify-center md:justify-start">
       {icon}
-      <h2 className="ml-2 font-semibold">{title}</h2>
+      <h2 className="ml-2 font-semibold text-center md:text-left">{title}</h2>
     </div>
   );
 }

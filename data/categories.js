@@ -25,12 +25,14 @@ const Categories = [
   },
   {
     title: "Birds",
-    description: "We carry a variety of different types of feed",
+    description:
+      "Keep your feathered friends healthy and happy with our vitamin fortified bird seed mixes for parrots, cockatiels and parakeets, feeders and toys.",
     imageUrl: "/img/categories/bird.jpg",
   },
   {
     title: "Wildlife",
-    description: "We carry a variety of different types of hay",
+    description:
+      "We carry whole corn, cracked corn, soybean, pond fish food, wild bird seed, and sunflower seeds for the wild critters.",
     imageUrl: "/img/categories/deer.jpg",
   },
 ];

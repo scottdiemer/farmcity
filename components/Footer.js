@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-spicy-mix">
-        <div className="container flex flex-col items-center justify-between p-4 text-white text-champagne md:text-left md:flex-row">
+        <div className="container flex flex-col items-center justify-between p-4 text-white text-champagne text-center md:text-left md:flex-row">
           <Logo />
           <div>
             <ul className="p-4 uppercase">
