@@ -14,7 +14,7 @@ export function ProductList({ products }) {
         const {
           id,
           name,
-          description,
+          summary,
           productImage,
           prices,
           sale,
@@ -37,15 +37,12 @@ export function ProductList({ products }) {
                   objectFit="contain"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 md:min-h-[350px] lg:min-h-[400px]">
                 <Title
                   className="text-2xl text-center text-olive-drab-camouflage"
                   title={name}
                 />
-                <Description
-                  className="m-4 prose line-clamp-4"
-                  description={description.document}
-                />
+                <Description className="m-4 prose" description={summary} />
                 {prices.map((price, index) => {
                   return (
                     <div
