@@ -12,6 +12,7 @@ export default function Layout({ title = "Farm City Feed Stores", children }) {
           name="description"
           content="Farm City Feed Stores carries a variety of Feed, Hay and supplies"
         />
+
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <header>

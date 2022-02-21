@@ -6,6 +6,9 @@ module.exports = {
   ],
   darkMode: "media", // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ["Nunito", "sans-serif"],
+    },
     extend: {
       colors: {
         "farmcity-primary": "#313639",

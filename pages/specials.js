@@ -2,6 +2,7 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import Layout from "../components/Layout";
 import { getSaleItems } from "../lib/products";
 import { ProductList } from "../components/ProductList";
+import Title from "../components/Title";
 
 export default function Specials({ serverUrl }) {
   const { data: products, error } = useQuery("saleItems", getSaleItems);
@@ -11,7 +12,13 @@ export default function Specials({ serverUrl }) {
 
   return (
     <Layout>
-      <ProductList products={products} />
+      <section className="bg-tan/25 overflow-hidden">
+        <Title
+          className="mx-auto p-4 text-3xl text-center text-shadow"
+          title="Specials"
+        />
+        <ProductList products={products} />
+      </section>{" "}
     </Layout>
   );
 }

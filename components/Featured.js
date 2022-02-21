@@ -32,7 +32,7 @@ function Featured() {
                     title={title}
                   />
                   <Description
-                    className="py-2 md:min-h-[80px] lg:min-h-[100px] text-sm text-center prose"
+                    className="py-2 md:min-h-[80px] lg:min-h-[160px] text-center prose lg:prose-lg"
                     description={description}
                   />
                 </div>

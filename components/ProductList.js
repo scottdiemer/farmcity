@@ -37,12 +37,15 @@ export function ProductList({ products }) {
                   objectFit="contain"
                 />
               </div>
-              <div className="p-4 md:min-h-[350px] lg:min-h-[400px]">
+              <div className="p-4 flex flex-col justify-between md:min-h-[360px] lg:min-h-[420px]">
                 <Title
                   className="text-2xl text-center text-olive-drab-camouflage"
                   title={name}
                 />
-                <Description className="m-4 prose" description={summary} />
+                <Description
+                  className="m-4 flex-1 prose"
+                  description={summary}
+                />
                 {prices.map((price, index) => {
                   return (
                     <div
@@ -51,14 +54,14 @@ export function ProductList({ products }) {
                     >
                       <div>{price.variant.value}</div>
                       {onSale ? (
-                        <>
+                        <div>
                           <Price className="text-red-500 ml-2">
-                            {`Sale: $${salePrices[0].price}`}
+                            {`Sale: $${salePrices[index].price}`}
                           </Price>
                           <Price className="line-through ml-2 font-normal text-gray-300">
                             {`Was: $${price.price}`}
                           </Price>
-                        </>
+                        </div>
                       ) : (
                         <Price className="ml-2 font-bold font-normal">
                           {`$${price.price}`}

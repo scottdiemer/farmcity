@@ -8,7 +8,7 @@ export default function about() {
           title="About Us"
           className="mx-auto p-4 text-3xl text-center text-shadow"
         />
-        <p className="mx-auto text-center  text-grey-800 prose">
+        <p className="mx-auto text-center text-md md:text-lg lg:text-xl text-grey-800 prose">
           Since Farm City Feed started in 1963, we’ve seen a lot of things
           change. The cattle market on Orange Ave is no longer around, feed now
           comes in by truck not by rail car, and the hitching post in the
