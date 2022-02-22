@@ -13,9 +13,9 @@ export default function about() {
           change. The cattle market on Orange Ave is no longer around, feed now
           comes in by truck not by rail car, and the hitching post in the
           parking lot to tie your horse off has since been removed. While some
-          things have changed, one thing has not is the way we do business! We
-          believe when you provide good service and prices that are reasonable,
-          people will come back.
+          things have changed, one thing that has not is the way we do business!
+          We believe when you provide good service and prices that are
+          reasonable, people will come back.
         </p>
       </div>
     </section>

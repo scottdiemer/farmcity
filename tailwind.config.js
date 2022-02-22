@@ -7,7 +7,7 @@ module.exports = {
   darkMode: "media", // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ["Nunito", "sans-serif"],
+      sans: ["Montserrat", "sans-serif"],
     },
     extend: {
       colors: {
