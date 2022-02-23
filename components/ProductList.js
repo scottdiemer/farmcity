@@ -9,7 +9,7 @@ import Title from "../components/Title";
 
 export function ProductList({ products }) {
   return (
-    <GridContainer>
+    <GridContainer className="p-2 md:p-4 lg-p-6">
       {products.map((product, index) => {
         const {
           id,

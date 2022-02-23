@@ -1,6 +1,7 @@
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { ProductList } from "../components/ProductList";
 import { getProducts } from "../lib/products";
+import { PageTitleStyle } from "../components/Styles";
 import Layout from "../components/Layout";
 import Title from "../components/Title";
 
@@ -19,7 +20,7 @@ export default function Products() {
     <Layout>
       <section className="bg-tan/25 overflow-hidden">
         <Title
-          className="mx-auto p-4 text-3xl text-center text-shadow"
+          className={PageTitleStyle.concat(" text-shadow")}
           title="Products"
         />
         <ProductList products={products} />

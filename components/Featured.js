@@ -10,10 +10,10 @@ function Featured() {
   return (
     <section className="bg-shadow overflow-hidden">
       <Title
-        className="mx-auto p-4 text-3xl text-center text-champagne"
+        className="mx-auto p-6 text-3xl lg:text-4xl text-center text-champagne"
         title="What we offer"
       />
-      <GridContainer>
+      <GridContainer className="p-2 md:p-4 lg-p-6">
         {Categories.map((category, index) => {
           const { title, description, imageUrl } = category;
           return (
@@ -28,7 +28,7 @@ function Featured() {
                 />
                 <div className="p-4">
                   <Title
-                    className="text-2xl text-center text-olive-drab-camouflage"
+                    className="text-2xl lg:text-3xl text-center text-olive-drab-camouflage"
                     title={title}
                   />
                   <Description

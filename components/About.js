@@ -1,12 +1,13 @@
+import { PageTitleStyle } from "../components/Styles";
 import Title from "../components/Title";
 
-export default function about() {
+export default function About({ className }) {
   return (
-    <section className="bg-tan/50 p-7 h-1/2">
+    <section className={className}>
       <div className="container">
         <Title
           title="About Us"
-          className="mx-auto p-4 text-3xl text-center text-shadow"
+          className={PageTitleStyle.concat(" text-shadow")}
         />
         <p className="mx-auto text-center text-md md:text-lg lg:text-xl text-grey-800 prose">
           Since Farm City Feed started in 1963, we’ve seen a lot of things

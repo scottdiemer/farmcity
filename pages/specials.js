@@ -2,9 +2,10 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import Layout from "../components/Layout";
 import { getSaleItems } from "../lib/products";
 import { ProductList } from "../components/ProductList";
+import { PageTitleStyle } from "../components/Styles";
 import Title from "../components/Title";
 
-export default function Specials({ serverUrl }) {
+export default function Specials() {
   const { data: products, error } = useQuery("saleItems", getSaleItems);
 
   !products && <p>No products!</p>;
@@ -14,7 +15,7 @@ export default function Specials({ serverUrl }) {
     <Layout>
       <section className="bg-tan/25 overflow-hidden">
         <Title
-          className="mx-auto p-4 text-3xl text-center text-shadow"
+          className={PageTitleStyle.concat(" text-shadow")}
           title="Specials"
         />
         <ProductList products={products} />
@@ -30,7 +31,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      serverUrl: process.env.SERVER_URL,
       dehydratedState: dehydrate(queryClient),
     },
     revalidate: parseInt(process.env.REVALIDATE_SECONDS),

@@ -1,10 +1,10 @@
-import AboutComponent from "../components/About";
+import About from "../components/About";
 import Layout from "../components/Layout";
 
-export default function About() {
+export default function AboutPage() {
   return (
     <Layout title="About | Farm City Feed Stores">
-      <AboutComponent />
+      <About className="bg-tan/50" />
     </Layout>
   );
 }
