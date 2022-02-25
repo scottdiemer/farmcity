@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Logo() {
   return (
-    <div className="px-4 py-2 shadow bg-champagne rounded-xl">
+    <div className="px-4 py-2 min-w-[160px] shadow bg-champagne rounded-xl">
       <Image
         src="/FarmCity_TextOnly.svg"
         alt="Farm City"
