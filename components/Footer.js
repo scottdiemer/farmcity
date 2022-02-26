@@ -1,75 +1,63 @@
-import Link from "next/link";
-import links from "../data/links";
+import Address from "../components/Address";
+import BusinessHours from "../components/BusinessHours";
+import Copyright from "../components/Copyright";
+import Days from "../components/DaysEnum";
+import Phone from "../components/Phone";
 import StoreInfo from "../data/StoreInfo";
 import {
   LocationIconHeader,
   PhoneIconHeader,
   TimeIconHeader,
 } from "../components/IconHeader";
-import Address from "../components/Address";
-import Days from "../components/DaysEnum";
-import BusinessHours from "../components/BusinessHours";
+import { LinkList } from "../components/LinkList";
+import links from "../data/links";
 import Logo from "./Logo";
-import Copyright from "./Copyright";
 
 export default function Footer() {
   return (
-    <>
-      <footer className="bg-spicy-mix">
-        <div className="container flex flex-col items-center justify-between p-4 text-white text-champagne text-center md:text-left md:flex-row">
-          <Logo />
-          <div>
-            <ul className="p-4 uppercase">
-              {links.map((item, index) => {
-                return (
-                  <li
-                    className="py-1 text-sm text-center md:text-left"
-                    key={index}
-                  >
-                    <Link className="cursorpointer" href={item.path}>
-                      {item.text}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          {StoreInfo.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center p-2 mt-2 text-sm md:items-start"
-              >
-                <div className="py-2">
-                  <LocationIconHeader title={`${item.location} Location:`} />
-                  <Address
-                    street={item.street}
-                    city={item.city}
-                    state={item.state}
-                    zip={item.zip}
-                  />
-                </div>
-                <div className="py-2">
-                  <TimeIconHeader title="Store Hours:" />
-                  <BusinessHours
-                    day={Days.Weekdays}
-                    hours={item.weekdayHours}
-                  />
-                  <BusinessHours
-                    day={Days.Saturday}
-                    hours={item.saturdayHours}
-                  />
-                </div>
-                <div className="py-2">
-                  <PhoneIconHeader title="Phone:" />
-                  <p>{item.phone}</p>
-                </div>
+    <footer className="bg-spicy-mix">
+      <div className="container flex flex-col items-center justify-between p-4 text-champagne text-center md:text-left md:flex-row">
+        <Logo />
+        <ul className="p-4 uppercase">
+          <LinkList
+            className="py-1 text-sm text-center md:text-left hover:text-white"
+            links={links}
+          />
+        </ul>
+        {StoreInfo.map((item, index) => {
+          const {
+            location,
+            street,
+            city,
+            state,
+            zip,
+            weekdayHours,
+            saturdayHours,
+            phone,
+          } = item;
+          return (
+            <div
+              key={index}
+              className="flex flex-col items-center p-2 mt-2 text-sm md:items-start"
+            >
+              <div className="py-2">
+                <LocationIconHeader title={`${location} Location:`} />
+                <Address street={street} city={city} state={state} zip={zip} />
               </div>
-            );
-          })}
-        </div>
-        <Copyright name="Farm City Feed Stores" className="text-white" />
-      </footer>
-    </>
+              <div className="py-2">
+                <TimeIconHeader title="Store Hours:" />
+                <BusinessHours day={Days.Weekdays} hours={weekdayHours} />
+                <BusinessHours day={Days.Saturday} hours={saturdayHours} />
+              </div>
+              <div className="py-2">
+                <PhoneIconHeader title="Phone:" />
+                <Phone phone={phone} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <Copyright name="Farm City Feed Stores" className="text-white" />
+    </footer>
   );
 }
