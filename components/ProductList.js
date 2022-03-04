@@ -8,6 +8,7 @@ import SlideInWhenVisible from "../components/SlideInWhenVisible";
 import Title from "../components/Title";
 
 export function ProductList({ products }) {
+  if (!products.length) return <div>No products at this time</div>;
   return (
     <GridContainer className="p-2 md:p-4 lg-p-6">
       {products.map((product, index) => {

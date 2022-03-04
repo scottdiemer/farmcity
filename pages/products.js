@@ -13,8 +13,8 @@ export default function Products() {
     error,
   } = useQuery("products", getProducts);
 
-  !products && <p>No products!</p>;
-  error && <p>Oops something went wrong!</p>;
+  if (!products) return <p>No products!</p>;
+  if (error) return <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
