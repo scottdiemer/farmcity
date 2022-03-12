@@ -8,7 +8,6 @@ import Title from "../components/Title";
 export default function Specials() {
   const { data: products, error } = useQuery("saleItems", getSaleItems);
 
-  if (!products) return <p>No products!</p>;
   if (error) return <p>Oops something went wrong!</p>;
 
   return (
@@ -18,7 +17,7 @@ export default function Specials() {
           className={PageTitleStyle.concat(" text-shadow")}
           title="Specials"
         />
-        <ProductList products={products} />
+        {!products ? <p>No products!</p> : <ProductList products={products} />}
       </section>
     </Layout>
   );

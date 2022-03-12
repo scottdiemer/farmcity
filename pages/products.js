@@ -1,19 +1,13 @@
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { ProductList } from "../components/ProductList";
-import { getProducts } from "../lib/products";
+import { getEnabledProducts } from "../lib/products";
 import { PageTitleStyle } from "../components/Styles";
 import Layout from "../components/Layout";
 import Title from "../components/Title";
 
 export default function Products() {
-  const {
-    data: {
-      data: { products },
-    },
-    error,
-  } = useQuery("products", getProducts);
+  const { data: products, error } = useQuery("products", getEnabledProducts);
 
-  if (!products) return <p>No products!</p>;
   if (error) return <p>Oops something went wrong!</p>;
 
   return (
@@ -23,7 +17,7 @@ export default function Products() {
           className={PageTitleStyle.concat(" text-shadow")}
           title="Products"
         />
-        <ProductList products={products} />
+        {!products ? <p>No products!</p> : <ProductList products={products} />}
       </section>
     </Layout>
   );
@@ -32,7 +26,7 @@ export default function Products() {
 export async function getStaticProps() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery("products", getProducts);
+  await queryClient.prefetchQuery("products", getEnabledProducts);
 
   return {
     props: {
