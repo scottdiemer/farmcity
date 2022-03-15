@@ -21,7 +21,7 @@ export default function Specials() {
         <MonthlySpecialDate className="text-center text-lg text-shadow mb-4 font-semibold" />
         {!products || products.length === 0 ? (
           <p className="text-center">
-            Sorry! There's no specials available at this time.
+            Sorry! There&apos;s no specials available at this time.
           </p>
         ) : (
           <ProductList products={products} />

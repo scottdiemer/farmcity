@@ -25,6 +25,7 @@ function Featured() {
                   height="50%"
                   layout="responsive"
                   objectFit="cover"
+                  alt={title}
                 />
                 <div className="p-4">
                   <Title

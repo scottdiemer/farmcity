@@ -36,6 +36,7 @@ export function ProductList({ products }) {
                   height={250}
                   layout="intrinsic"
                   objectFit="contain"
+                  alt={name}
                 />
               </div>
               <div className="p-4 flex flex-col text-center md:min-h-[360px] lg:min-h-[420px]">
