@@ -1,18 +1,19 @@
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { ProductList } from "../components/ProductList";
 import { getEnabledProducts } from "../lib/products";
-import { PageTitleStyle } from "../components/Styles";
+import { PageTitleStyle, calcContainerHeight } from "../components/Styles";
 import Layout from "../components/Layout";
 import Title from "../components/Title";
 
 export default function Products() {
   const { data: products, error } = useQuery("products", getEnabledProducts);
+  const height = calcContainerHeight(products);
 
   if (error) return <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
-      <section className="bg-tan/25 overflow-hidden">
+      <section className={`bg-tan/25 overflow-hidden ${height}`.trim()}>
         <Title
           className={PageTitleStyle.concat(" text-shadow")}
           title="Products"

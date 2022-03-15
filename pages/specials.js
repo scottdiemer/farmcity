@@ -2,22 +2,30 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import Layout from "../components/Layout";
 import { getSaleItems } from "../lib/products";
 import { ProductList } from "../components/ProductList";
-import { PageTitleStyle } from "../components/Styles";
+import { PageTitleStyle, calcContainerHeight } from "../components/Styles";
+import MonthlySpecialDate from "../components/MonthlySpecialDate";
 import Title from "../components/Title";
 
 export default function Specials() {
   const { data: products, error } = useQuery("saleItems", getSaleItems);
-
+  const height = calcContainerHeight(products);
   if (error) return <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
-      <section className="bg-tan/25 overflow-hidden">
+      <section className={`bg-tan/25 overflow-hidden ${height}`.trim()}>
         <Title
           className={PageTitleStyle.concat(" text-shadow")}
           title="Specials"
         />
-        {!products ? <p>No products!</p> : <ProductList products={products} />}
+        <MonthlySpecialDate className="text-center text-lg text-shadow mb-4 font-semibold" />
+        {!products || products.length === 0 ? (
+          <p className="text-center">
+            Sorry! There's no specials available at this time.
+          </p>
+        ) : (
+          <ProductList products={products} />
+        )}
       </section>
     </Layout>
   );
