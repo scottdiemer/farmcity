@@ -6,10 +6,8 @@ import Layout from "../components/Layout";
 import Title from "../components/Title";
 
 export default function Products() {
-  const { data: products, error } = useQuery("products", getEnabledProducts);
+  const { data: products } = useQuery("products", getEnabledProducts);
   const height = calcContainerHeight(products);
-
-  if (error) return <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
@@ -18,7 +16,11 @@ export default function Products() {
           className={PageTitleStyle.concat(" text-shadow")}
           title="Products"
         />
-        {!products ? <p>No products!</p> : <ProductList products={products} />}
+        {!products || products.length === 0 ? (
+          <p className="text-center">No products available at this time...</p>
+        ) : (
+          <ProductList products={products} />
+        )}
       </section>
     </Layout>
   );

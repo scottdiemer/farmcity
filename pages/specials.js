@@ -7,9 +7,8 @@ import MonthlySpecialDate from "../components/MonthlySpecialDate";
 import Title from "../components/Title";
 
 export default function Specials() {
-  const { data: products, error } = useQuery("saleItems", getSaleItems);
+  const { data: products } = useQuery("saleItems", getSaleItems);
   const height = calcContainerHeight(products);
-  if (error) return <p>Oops something went wrong!</p>;
 
   return (
     <Layout>
@@ -21,7 +20,7 @@ export default function Specials() {
         <MonthlySpecialDate className="text-center text-lg text-shadow mb-4 font-semibold" />
         {!products || products.length === 0 ? (
           <p className="text-center">
-            Sorry! There&apos;s no specials available at this time.
+            Sorry! There&apos;s no specials available at this time...
           </p>
         ) : (
           <ProductList products={products} />
