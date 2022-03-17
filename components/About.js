@@ -2,6 +2,8 @@ import { PageTitleStyle } from "../components/Styles";
 import Title from "../components/Title";
 
 export default function About({ className }) {
+  const paragraphStyle =
+    "mx-auto my-2 md:my-4 lg:my-6 text-center text-md md:text-lg lg:text-xl text-grey-800 prose";
   return (
     <section className={className}>
       <div className="container">
@@ -9,7 +11,7 @@ export default function About({ className }) {
           title="About Us"
           className={PageTitleStyle.concat(" text-shadow")}
         />
-        <p className="mx-auto text-center text-md md:text-lg lg:text-xl text-grey-800 prose">
+        <p className={paragraphStyle}>
           Since Farm City Feed started in 1963, we’ve seen a lot of things
           change. The cattle market on Orange Ave is no longer around, feed now
           comes in by truck not by rail car, and the hitching post in the
