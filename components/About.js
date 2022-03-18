@@ -3,7 +3,7 @@ import Title from "../components/Title";
 
 export default function About({ className }) {
   const paragraphStyle =
-    "mx-auto my-2 md:my-4 lg:my-6 text-center text-md md:text-lg lg:text-xl text-grey-800 prose";
+    "mx-auto py-2 md:py-4 lg:py-6 text-center text-md md:text-lg lg:text-xl text-grey-800 prose";
   return (
     <section className={className}>
       <div className="container">
