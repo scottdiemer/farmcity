@@ -9,6 +9,9 @@ const nextConfig = {
     REVALIDATE_SECONDS: process.env.REVALIDATE_SECONDS,
     SESSION_SECRET: process.env.SESSION_SECRET,
   },
+  publicRuntimeConfig: {
+    serverUrl,
+  },
   images: {
     domains: ["i.imgur.com", "localhost"],
   },
