@@ -172,6 +172,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@preconstruct/next@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/@preconstruct/next/-/next-3.0.1.tgz#7070edaf7adb350010114adbbc90079a98b0f31a"
+  integrity sha512-b9q1US5vsUzHPeMGlCFGWdttAHQ2q6raFlY1vf5binrKMkki/gt6GvskTJ4RXfFCt7QmVx9tRcuTFXMhUDgb6A==
+
 "@rushstack/eslint-patch@^1.0.6":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"

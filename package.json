@@ -9,6 +9,7 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@keystone-6/document-renderer": "^1.0.0",
+    "@preconstruct/next": "^3.0.1",
     "@tailwindcss/line-clamp": "^0.3.0",
     "framer-motion": "^5.5.5",
     "mathjs": "^10.0.2",
