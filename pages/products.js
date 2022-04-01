@@ -8,7 +8,7 @@ import Title from "../components/Title";
 export default function Products() {
   const { data: products } = useQuery("products", getEnabledProducts);
   const height = calcContainerHeight(products);
-
+  console.log(products);
   return (
     <Layout>
       <section className={`bg-tan/25 overflow-hidden ${height}`.trim()}>

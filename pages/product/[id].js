@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { gql } from "../../lib/gql";
 import { getProducts, getProduct } from "../../lib/products";
-import { dehydrate, QueryClient, useQuery } from "react-query";
+import { gql } from "../../lib/gql";
+import { fetchJson } from "../../lib/fetchJson";
 import Layout from "../../components/Layout";
 
-export default function ProductPage({ params: { id } }) {
-  const { data: product } = useQuery("product", getProduct(id));
+export default function ProductPage({ product }) {
   return (
     <Layout>
       <h1>{product.name}</h1>
@@ -24,13 +23,51 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { id } }) {
-  const queryClient = new QueryClient();
-  // const query =
-  await queryClient.prefetchQuery("product", getProduct(id));
+  const query = `
+  {
+    product(where: {id: ${id}}) {
+      name
+      description {
+        document
+      }
+      productImage {
+        url
+        height
+        width
+      }
+      prices {
+        variant {
+          variant {
+            name
+          }
+          value
+        }
+        price
+      }
+      sale
+      saleStart
+      saleEnd
+      salePrices {
+        variant {
+          variant {
+            name
+          }
+          value
+        }
+        price
+      }
+    }
+    }
+  }`;
+  console.log(query);
+  const product = await fetchJson(
+    "http://localhost:3000/api/graphql",
+    JSON.stringify(query)
+  );
 
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
+      product: product,
     },
     revalidate: parseInt(process.env.REVALIDATE_SECONDS),
   };
