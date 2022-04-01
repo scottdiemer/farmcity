@@ -10,7 +10,7 @@ export default function Products() {
   const height = calcContainerHeight(products);
   console.log(products);
   return (
-    <Layout>
+    <Layout title="Products | Farm City Feed Stores">
       <section className={`bg-tan/25 overflow-hidden ${height}`.trim()}>
         <Title
           className={PageTitleStyle.concat(" text-shadow")}

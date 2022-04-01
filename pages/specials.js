@@ -11,7 +11,7 @@ export default function Specials() {
   const height = calcContainerHeight(products);
 
   return (
-    <Layout>
+    <Layout title="Monthly Specials | Farm City Feed Stores">
       <section className={`bg-tan/25 overflow-hidden ${height}`.trim()}>
         <Title
           className={PageTitleStyle.concat(" text-shadow")}
