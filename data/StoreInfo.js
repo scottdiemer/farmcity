@@ -7,7 +7,7 @@ const StoreInfo = [
     zip: "32806",
     phone: "(407) 843-7470",
     weekdayHours: "8:30am - 5:30pm",
-    saturdayHours: "8:30am - 3:00pm",
+    saturdayHours: "8:30am - 2:00pm",
     imageUrl: "/img/locations/orlando.jpg",
   },
   {
